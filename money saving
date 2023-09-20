@@ -1,0 +1,23 @@
+# Function to calculate the total saved amount
+def calculate_total_saved_amount(savings_per_month, target_months):
+    total_saved = savings_per_month * target_months
+    return total_saved
+
+# Function to determine the time required to reach the target savings
+def calculate_time_to_reach_goal(current_savings, target_savings, savings_per_month):
+    months = 0
+    while current_savings < target_savings:
+        current_savings += savings_per_month
+        months += 1
+    return months
+
+# Example usage
+savings_per_month = 500
+target_months = 12
+current_savings = 2000
+target_savings = calculate_total_saved_amount(savings_per_month, target_months)
+
+months_to_reach_goal = calculate_time_to_reach_goal(current_savings, target_savings, savings_per_month)
+
+print(f"With a savings of ${savings_per_month} per month, it will take approximately {months_to_reach_goal} months to save ${target_savings}.")
+
